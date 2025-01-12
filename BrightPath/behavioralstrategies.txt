@@ -1,0 +1,126 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'behavioral_strategies_model.dart';
+export 'behavioral_strategies_model.dart';
+
+class BehavioralStrategiesWidget extends StatefulWidget {
+  const BehavioralStrategiesWidget({super.key});
+
+  @override
+  State<BehavioralStrategiesWidget> createState() =>
+      _BehavioralStrategiesWidgetState();
+}
+
+class _BehavioralStrategiesWidgetState
+    extends State<BehavioralStrategiesWidget> {
+  late BehavioralStrategiesModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => BehavioralStrategiesModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Color(0xFFF1F4F8),
+        body: SafeArea(
+          top: true,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Align(
+                  alignment: AlignmentDirectional(-1, -1),
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed('ParentsGuide');
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 24,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0, -1),
+                  child: Container(
+                    width: 421,
+                    height: 226,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: Image.asset(
+                          'assets/images/Screenshot_2025-01-12_015055.png',
+                        ).image,
+                      ),
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(-1, 0),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(40, 40, 0, 0),
+                    child: Text(
+                      'Behavioral Strategies',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Plus Jakarta Sans',
+                            fontSize: 24,
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(-1, 0),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(40, 20, 20, 0),
+                    child: Text(
+                      'Attention deficit hyperactivity disorder, more commonly known as ADHD primarily manifests with poor or short attention span, a consistent intensity of hyperactivity, and impulsiveness inappropriate for the person’s age. This limits the ability of the patient for normal social interaction and learning. Symptoms develop during early childhood and continue to adulthood. The exact cause of ADHD is still unknown but it has a strong genetic component. Some studies relate ADHD to imbalances in the levels of neurotransmitters or structural abnormalities of the brain wherein there is less nervous tissue in specific regions.',
+                      textAlign: TextAlign.justify,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Plus Jakarta Sans',
+                            fontSize: 20,
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

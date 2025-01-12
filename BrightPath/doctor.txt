@@ -1,0 +1,434 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'doctorememe_model.dart';
+export 'doctorememe_model.dart';
+
+class DoctorememeWidget extends StatefulWidget {
+  const DoctorememeWidget({super.key});
+
+  @override
+  State<DoctorememeWidget> createState() => _DoctorememeWidgetState();
+}
+
+class _DoctorememeWidgetState extends State<DoctorememeWidget> {
+  late DoctorememeModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => DoctorememeModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        body: SafeArea(
+          top: true,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
+                      child: Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                'Public Hospitals',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      color: Color(0xFFFF914D),
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                              Text(
+                                '2',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      color: Color(0xFFFF914D),
+                                      fontSize: 55,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      child: Align(
+                        alignment: AlignmentDirectional(1, 0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
+                          child: Container(
+                            width: 100,
+                            height: 100,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            alignment: AlignmentDirectional(0, 0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
+                                  'Private Hospitals',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        color: Color(0xFFFF914D),
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                Text(
+                                  '2\n',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        color: Color(0xFFFF914D),
+                                        fontSize: 55,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional(-1, 0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(40, 40, 0, 0),
+                          child: Text(
+                            'Public Hospitals',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                        child: Container(
+                          width: 296,
+                          height: 156,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [Color(0xFFFF914D), Color(0xFFFFDE59)],
+                              stops: [0, 1],
+                              begin: AlignmentDirectional(0, -1),
+                              end: AlignmentDirectional(0, 1),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  'Philippine General Hospital (PGH)\nAddress: Taft Ave, Ermita, Manila\nContact: (02) 8554-8400 loc. 2439\nWebsite: www.pgh.gov.ph\n',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                              Flexible(
+                                child: Align(
+                                  alignment: AlignmentDirectional(1, 0),
+                                  child: FFButtonWidget(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    text: 'Copy',
+                                    options: FFButtonOptions(
+                                      height: 40,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16, 0, 16, 0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 0, 0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 0,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
+                        child: Container(
+                          width: 297,
+                          height: 168,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [Color(0xFFFF914D), Color(0xFFFFDE59)],
+                              stops: [0, 1],
+                              begin: AlignmentDirectional(0, -1),
+                              end: AlignmentDirectional(0, 1),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  'National Center for Mental Health (NCMH)\nAddress: Nueve de Pebrero St, Mandaluyong City\nContact: (02) 8531-9001\nWebsite: www.ncmh.gov.ph\n',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                              Flexible(
+                                child: Align(
+                                  alignment: AlignmentDirectional(1, 0),
+                                  child: FFButtonWidget(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    text: 'Copy',
+                                    options: FFButtonOptions(
+                                      height: 40,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16, 0, 16, 0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 0, 0),
+                                      color: Colors.white,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 0,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(-1, 0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(40, 40, 0, 0),
+                          child: Text(
+                            'Private Hospitals',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
+                        child: Container(
+                          width: 297,
+                          height: 203,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [Color(0xFFFF914D), Color(0xFFFFDE59)],
+                              stops: [0, 1],
+                              begin: AlignmentDirectional(0, -1),
+                              end: AlignmentDirectional(0, 1),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  'St. Luke\'s Medical Center – Global City\nAddress: Rizal Drive corner 32nd St, Bonifacio Global City, Taguig\nContact: (02) 8789-7700\nWebsite: www.stlukes.com.ph',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                              Flexible(
+                                child: Align(
+                                  alignment: AlignmentDirectional(1, 0),
+                                  child: FFButtonWidget(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    text: 'Copy',
+                                    options: FFButtonOptions(
+                                      height: 40,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16, 0, 16, 0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 0, 0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 0,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
+                        child: Container(
+                          width: 297,
+                          height: 157,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [Color(0xFFFF914D), Color(0xFFFFDE59)],
+                              stops: [0, 1],
+                              begin: AlignmentDirectional(0, -1),
+                              end: AlignmentDirectional(0, 1),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  'The Medical City\nAddress: Ortigas Avenue, Pasig City\nContact: (02) 8988-1000\nWebsite: www.themedicalcity.com',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                              Flexible(
+                                child: Align(
+                                  alignment: AlignmentDirectional(1, 0),
+                                  child: FFButtonWidget(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    text: 'Copy',
+                                    options: FFButtonOptions(
+                                      height: 40,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16, 0, 16, 0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 0, 0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 0,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

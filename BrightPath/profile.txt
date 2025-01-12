@@ -1,0 +1,773 @@
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'dart:ui';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'profile_model.dart';
+export 'profile_model.dart';
+
+class ProfileWidget extends StatefulWidget {
+  /// Page 4
+  ///
+  const ProfileWidget({super.key});
+
+  @override
+  State<ProfileWidget> createState() => _ProfileWidgetState();
+}
+
+class _ProfileWidgetState extends State<ProfileWidget>
+    with TickerProviderStateMixin {
+  late ProfileModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  var hasContainerTriggered1 = false;
+  var hasContainerTriggered2 = false;
+  var hasContainerTriggered3 = false;
+  final animationsMap = <String, AnimationInfo>{};
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => ProfileModel());
+
+    animationsMap.addAll({
+      'containerOnActionTriggerAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 50.0.ms,
+            duration: 300.0.ms,
+            begin: Offset(0.85, 0.85),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 50.0.ms,
+            duration: 300.0.ms,
+            begin: Offset(0.85, 0.85),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation3': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 50.0.ms,
+            duration: 300.0.ms,
+            begin: Offset(0.85, 0.85),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+    });
+    setupAnimations(
+      animationsMap.values.where((anim) =>
+          anim.trigger == AnimationTrigger.onActionTrigger ||
+          !anim.applyInitialState),
+      this,
+    );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Color(0xFFF1F4F8),
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+          title: Text(
+            'User',
+            style: FlutterFlowTheme.of(context).bodyLarge.override(
+                  fontFamily: 'Plus Jakarta Sans',
+                  color: Color(0xFFFE8C25),
+                  fontSize: 16,
+                  letterSpacing: 0.0,
+                  fontWeight: FontWeight.normal,
+                ),
+          ),
+          actions: [],
+          centerTitle: false,
+          elevation: 0,
+        ),
+        body: SafeArea(
+          top: true,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 3,
+                        color: Color(0x33000000),
+                        offset: Offset(
+                          0,
+                          1,
+                        ),
+                      )
+                    ],
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text(
+                          'Hi there ',
+                          style: FlutterFlowTheme.of(context)
+                              .headlineSmall
+                              .override(
+                                fontFamily: 'Outfit',
+                                color: Color(0xFF14181B),
+                                fontSize: 24,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                        ),
+                        Text(
+                          FFAppState().textFrompage1,
+                          style: FlutterFlowTheme.of(context)
+                              .headlineSmall
+                              .override(
+                                fontFamily: 'Outfit',
+                                color: Color(0xFFFF914D),
+                                fontSize: 24,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 0),
+                    child: Text(
+                      'Parents Section',
+                      style: FlutterFlowTheme.of(context).labelLarge.override(
+                            fontFamily: 'Plus Jakarta Sans',
+                            color: Color(0xFFFF914D),
+                            fontSize: 16,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.normal,
+                          ),
+                    ),
+                  ),
+                  Flexible(
+                    child: Align(
+                      alignment: AlignmentDirectional(1, 0),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 16, 16, 0),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            context.pushNamed('ViewAll');
+                          },
+                          text: 'View All',
+                          icon: Icon(
+                            Icons.arrow_forward_ios,
+                            size: 15,
+                          ),
+                          options: FFButtonOptions(
+                            height: 40,
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                            iconAlignment: IconAlignment.end,
+                            iconPadding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
+                                  lineHeight: 1,
+                                ),
+                            elevation: 0,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('DailyTips');
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5,
+                          color: Color(0x3416202A),
+                          offset: Offset(
+                            0.0,
+                            2,
+                          ),
+                        )
+                      ],
+                      borderRadius: BorderRadius.circular(12),
+                      shape: BoxShape.rectangle,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('DailyTips');
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Icon(
+                              Icons.tips_and_updates_outlined,
+                              color: Color(0xFF57636C),
+                              size: 24,
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                                child: Text(
+                                  'Daily Tips',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyLarge
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        color: Color(0xFF14181B),
+                                        fontSize: 16,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.9, 0),
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Color(0xFF57636C),
+                                size: 18,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('ParentsGuide');
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5,
+                          color: Color(0x3416202A),
+                          offset: Offset(
+                            0.0,
+                            2,
+                          ),
+                        )
+                      ],
+                      borderRadius: BorderRadius.circular(12),
+                      shape: BoxShape.rectangle,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Icon(
+                            Icons.grid_view_sharp,
+                            color: Color(0xFF57636C),
+                            size: 24,
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                              child: Text(
+                                'Parent Guide',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      color: Color(0xFF14181B),
+                                      fontSize: 16,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: AlignmentDirectional(0.9, 0),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xFF57636C),
+                              size: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('ADHDsurveyPage1');
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5,
+                          color: Color(0x3416202A),
+                          offset: Offset(
+                            0.0,
+                            2,
+                          ),
+                        )
+                      ],
+                      borderRadius: BorderRadius.circular(12),
+                      shape: BoxShape.rectangle,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Icon(
+                            Icons.text_snippet_sharp,
+                            color: Color(0xFF57636C),
+                            size: 24,
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                              child: Text(
+                                'ADHD Test',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      color: Color(0xFF14181B),
+                                      fontSize: 16,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: AlignmentDirectional(0.9, 0),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xFF57636C),
+                              size: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 0),
+                child: Text(
+                  'Kids Section',
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Plus Jakarta Sans',
+                        color: Color(0xFFFF914D),
+                        fontSize: 16,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.normal,
+                      ),
+                ),
+              ),
+              StreamBuilder<List<ImagesRecord>>(
+                stream: queryImagesRecord(),
+                builder: (context, snapshot) {
+                  // Customize what your widget looks like when it's loading.
+                  if (!snapshot.hasData) {
+                    return Center(
+                      child: SizedBox(
+                        width: 50,
+                        height: 50,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            FlutterFlowTheme.of(context).primary,
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                  List<ImagesRecord> carouselImagesRecordList = snapshot.data!;
+
+                  return Container(
+                    width: double.infinity,
+                    height: 218,
+                    child: CarouselSlider.builder(
+                      itemCount: carouselImagesRecordList.length,
+                      itemBuilder: (context, carouselIndex, _) {
+                        final carouselImagesRecord =
+                            carouselImagesRecordList[carouselIndex];
+                        return InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('Game1');
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.network(
+                              carouselImagesRecord.url,
+                              width: 200,
+                              height: 200,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        );
+                      },
+                      carouselController: _model.carouselController ??=
+                          CarouselSliderController(),
+                      options: CarouselOptions(
+                        initialPage:
+                            max(0, min(1, carouselImagesRecordList.length - 1)),
+                        viewportFraction: 0.5,
+                        disableCenter: true,
+                        enlargeCenterPage: true,
+                        enlargeFactor: 0.25,
+                        enableInfiniteScroll: true,
+                        scrollDirection: Axis.horizontal,
+                        autoPlay: false,
+                        onPageChanged: (index, _) =>
+                            _model.carouselCurrentIndex = index,
+                      ),
+                    ),
+                  );
+                },
+              ),
+              Align(
+                alignment: AlignmentDirectional(0, 1),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 15,
+                        color: Color(0x0F000000),
+                        offset: Offset(
+                          0,
+                          4,
+                        ),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(5, 14, 5, 14),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.number = 0;
+                              safeSetState(() {});
+                              if (animationsMap[
+                                      'containerOnActionTriggerAnimation1'] !=
+                                  null) {
+                                safeSetState(
+                                    () => hasContainerTriggered1 = true);
+                                SchedulerBinding.instance.addPostFrameCallback(
+                                    (_) async => await animationsMap[
+                                            'containerOnActionTriggerAnimation1']!
+                                        .controller
+                                        .forward(from: 0.0));
+                              }
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 55,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFF914D),
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0, 0),
+                                    child: Icon(
+                                      Icons.home_filled,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 23,
+                                    ),
+                                  ),
+                                ).animateOnActionTrigger(
+                                    animationsMap[
+                                        'containerOnActionTriggerAnimation1']!,
+                                    hasBeenTriggered: hasContainerTriggered1),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 5, 0, 0),
+                                  child: Text(
+                                    'Home',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.number = 0;
+                              safeSetState(() {});
+                              if (animationsMap[
+                                      'containerOnActionTriggerAnimation2'] !=
+                                  null) {
+                                safeSetState(
+                                    () => hasContainerTriggered2 = true);
+                                SchedulerBinding.instance.addPostFrameCallback(
+                                    (_) async => await animationsMap[
+                                            'containerOnActionTriggerAnimation2']!
+                                        .controller
+                                        .forward(from: 0.0));
+                              }
+
+                              context.pushNamed('AboutUs');
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 55,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFF914D),
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0, 0),
+                                    child: Icon(
+                                      Icons.pie_chart,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 23,
+                                    ),
+                                  ),
+                                ).animateOnActionTrigger(
+                                    animationsMap[
+                                        'containerOnActionTriggerAnimation2']!,
+                                    hasBeenTriggered: hasContainerTriggered2),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 5, 0, 0),
+                                  child: Text(
+                                    'About us',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.number = 0;
+                              safeSetState(() {});
+                              if (animationsMap[
+                                      'containerOnActionTriggerAnimation3'] !=
+                                  null) {
+                                safeSetState(
+                                    () => hasContainerTriggered3 = true);
+                                SchedulerBinding.instance.addPostFrameCallback(
+                                    (_) async => await animationsMap[
+                                            'containerOnActionTriggerAnimation3']!
+                                        .controller
+                                        .forward(from: 0.0));
+                              }
+
+                              context.pushNamed('FAQ2');
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 55,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFF914D),
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0, 0),
+                                    child: Icon(
+                                      Icons.person,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 23,
+                                    ),
+                                  ),
+                                ).animateOnActionTrigger(
+                                    animationsMap[
+                                        'containerOnActionTriggerAnimation3']!,
+                                    hasBeenTriggered: hasContainerTriggered3),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 5, 0, 0),
+                                  child: Text(
+                                    'FAQ',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
